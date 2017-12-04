@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+
+<% if(redirect) {%>
+  <p><%= message %> </p>
+<%} else if(activeUserRedirect){%>
+  <p>Already an active user, please <a href="/sign-up">Sign Up</a></p>
+<% } %>
+<form action="/sign-up" method="POST">
+  name: <input type="text" name="name">
+  email: <input type="text" name="email">
+  password: <input type="password" name="password">
+  <input type="Submit" value="signUp">
+</form>
+
+<% include ../partials/footer %>
